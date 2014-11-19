@@ -95,11 +95,11 @@ function get_portfolio() {
 		foreach ( $attachments as $attachment_id => $attachment ) { 
 		
 			$myPermalink = get_permalink($attachment_id); // link to attachment page
-			$myImage = wp_get_attachment_image($attachment_id, 'thumbnail'); // image
+			$myImage = wp_get_attachment_image($attachment_id, 'medium'); // image
 			$myTitle = apply_filters('the_title', $attachment->post_title); // title
 			$myCaption = get_post_field('post_excerpt', $attachment->ID); // caption
 			
-			$portfolio .= '<section class="portfolio-piece"><a href="'.$myPermalink.'">'.$myImage.'</a><h3>'.$myTitle.'</h3><p>'.$myCaption.' <a href="'.$myPermalink.'">View &raquo;</a></p></section>';			      
+			$portfolio .= '<section class="portfolio-piece"><a href="'.$myPermalink.'">'.$myImage.'</a><h3><a href="'.$myPermalink.'">'.$myTitle.'&nbsp;&raquo;</a></h3><p>'.$myCaption.' <a href="'.$myPermalink.'">View&nbsp;&raquo;</a></p></section>';			      
 	
 		} // end foreach 
 
@@ -110,6 +110,18 @@ function get_portfolio() {
 } // end function
 	
 add_shortcode( 'portfolio', 'get_portfolio' );
+//
+
+// Get SEO Paragraph From Home Page
+function get_seo() {
+
+	$myPosting = get_post(8);
+	
+	$mySEO = $myPosting->post_content;
+	
+	echo $mySEO;
+	
+}
 //
 
 // Get Featured Case Study 
@@ -124,7 +136,7 @@ function get_featured_case_study($atts) {
 	$caseImage = get_the_post_thumbnail($myPostID, 'thumbnail'); // get featured thumbnail
 	$caseLink = get_permalink( $myPosting->ID ); // get permalink
 	
-	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">Case Study: '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.' <a href="'.$caseLink.'">Read More &raquo;</a></p></section>'; // write it up...
+	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">Case Study: '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.' <a href="'.$caseLink.'">Read More&nbsp;&raquo;</a></p></section>'; // write it up...
 	
 	return $myCaseStudy; // ... and return it, bitch.
 	
@@ -139,7 +151,7 @@ function get_child_pages() {
 	global $post;
 	
 	rewind_posts(); // stop any previous loops 
-	query_posts(array('post_type' => 'page','numberposts' => -1,'post_status' => null,'post_parent' => $post->ID,'order' => 'ASC','orderby' => title)); // query and order child pages 
+	query_posts(array('post_type' => 'page','numberposts' => -1,'post_status' => null,'post_parent' => $post->ID,'order' => 'ASC','orderby' => 'menu_order')); // query and order child pages 
     
 	if (have_posts()) : while (have_posts()) : the_post(); 
 	
@@ -151,7 +163,7 @@ function get_child_pages() {
 		echo '<article id="page-excerpt-'.$childID.'" class="page-excerpt">';
         echo '<h3><a href="'.$childPermalink.'">'.$childTitle.' &raquo;</a></h3>';
         echo $childExcerpt;
-        echo '<p class="read-more"><a href="'.$childPermalink.'"> Read More &raquo;</a></p>
+        echo '<p class="read-more"> <a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>
         </article>';
         
 	endwhile; endif; 
@@ -188,6 +200,66 @@ $attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC
 	
 	<?php } // end see if images
 
-} // end add flexslider
+} 
+// 
+
+// Get Featured Image with a Custom Link
+function get_featured_image_with_link() {
+	
+	global $post;
+	
+	$theImage = get_the_post_thumbnail($page->ID, 'large');
+	$theLink = get_post_meta($post->ID, 'featured-image-link', true);
+		
+	echo '<figure class="featured-image">';
+	
+	if ($theLink) { 
+	
+		echo '<a href="'.$theLink.'" target="_blank" title="View: '.$theLink.'">'.$theImage.'</a>';
+		
+	} else {
+		
+		echo $theImage;
+		
+	}
+		
+	echo '</figure>';
+	
+}
+//
+
+// Remove Inline Styles from Captions
+add_shortcode('wp_caption', 'fixed_img_caption_shortcode');
+add_shortcode('caption', 'fixed_img_caption_shortcode');
+function fixed_img_caption_shortcode($attr, $content = null) {
+	
+	if ( ! isset( $attr['caption'] ) ) {
+		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
+			$content = $matches[1];
+			$attr['caption'] = trim( $matches[2] );
+		}
+	}
+
+	$output = apply_filters('img_caption_shortcode', '', $attr, $content);
+	if ( $output != '' )
+		return $output;
+
+	extract(shortcode_atts(array(
+		'id'	=> '',
+		'align'	=> 'alignnone',
+		'width'	=> '',
+		'caption' => ''
+	), $attr));
+
+	if ( 1 > (int) $width || empty($caption) )
+		return $content;
+
+	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+
+	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
+	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
+}
+//
+
 
 ?>

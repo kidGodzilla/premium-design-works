@@ -39,7 +39,7 @@ Author URI: http://www.premiumdw.com/
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/flame.ico" />
+<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/flame.ico" />
 <!-- End Links -->
     
 <!-- Start Scripts -->
@@ -54,7 +54,7 @@ Author URI: http://www.premiumdw.com/
 </script>
 <!-- End Scripts -->
 
-<!--[if lt IE 9]><script type="text/javascript"> window.onload = function() { window.location = "http://www.premiumdw.com/articles/i-just-cant-support-you-any-longer-internet-explorer-8/" };</script><![endif]-->
+<!--[if lt IE 9]><script type="text/javascript"> window.onload = function() { window.location = "../?p=1455" };</script><![endif]-->
 
 <!-- Start WP Head -->
 <?php wp_head(); ?> 
@@ -81,7 +81,7 @@ Author URI: http://www.premiumdw.com/
     
     <!-- Start Toggle -->
     <div id="toggle">
-    	<a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/img-toggle.png" /></a>
+    	<a href="#">&#8801;&nbsp;Menu<!--<img src="<?php bloginfo('template_directory'); ?>/images/img-toggle.png" />--></a>
     </div>
     <!-- END Toggle -->
     

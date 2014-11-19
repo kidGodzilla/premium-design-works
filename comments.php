@@ -57,18 +57,21 @@
 
 <?php else : ?>
 <p>Don't forget to get your <a href="http://en.gravatar.com/" target="_blank">Globally Recognized Avatar</a>.</p>
-<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
-<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-<label for="email"><small>Mail (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
-<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url"><small>Website</small></label></p>
+<label for="author">Name: <?php /*if ($req) echo "(required)";*/ ?></label>
+<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>"  tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+
+<label for="email">Mail: <?php /*if ($req) echo "(required)";*/ ?></label>
+<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>"  tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+
+<label for="url">Website:</label>
+<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>"  tabindex="3" />
+
 <?php endif; ?>
 <!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
-<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<label for="comment">Comment:</label>
+<textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea>
+<input name="submit" type="submit" class="submit" tabindex="5" value="Submit Comment" />
 <?php comment_id_fields(); ?>
-</p>
 <?php do_action('comment_form', $post->ID); ?>
 </form>
 <?php endif; // If registration required and not logged in ?>

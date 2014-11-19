@@ -13,14 +13,14 @@
 </div>
 <!-- End Footer -->
 
-<!-- START ANALYTICS 
+<!-- Start Analytics -->
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 </script>
 <script type="text/javascript">
 _uacct = "UA-3981006-1";
 urchinTracker();
 </script>
- END ANALYTICS -->
+<!-- End Analytics -->
 
 <!-- Start WP Footer -->
 <?php wp_footer(); ?>
