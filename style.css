@@ -529,9 +529,13 @@ th, td {
 		}
 		
 	#content pre {
-		padding: 0 20px;
-		border-left: 3px solid #ddd;
-		margin: 20px;
+		padding: 10px;
+		border: 2px solid #ddd;
+		margin-bottom: 10px;
+		background: #EFEFEF;
+		overflow: auto;
+		white-space: pre-wrap;
+		line-height: 125%;
 		}
 		
 	#content blockquote {
@@ -590,7 +594,7 @@ th, td {
 		clear: both;
 		display: block;
 		color: #C4122F;
-		font-size: 1.5em;
+		font-size: 1.25em;
 		line-height: 125%;
 		font-weight: 500;
 		margin-bottom: 4px;
@@ -655,8 +659,6 @@ th, td {
 			float: right !important;
 			margin: 0 0px 10px 10px!important; 
 			}
-	
-	
 			
 		#content div.wp-caption a  {
 			border-bottom: none;
@@ -875,13 +877,18 @@ th, td {
 			color: #000000;
 			}			
 			
-		#sidebar li a:hover:after, #sidebar li.current_page_item a:after, #sidebar li.current-cat a:after {
+			
+		#sidebar li a:after  {
 			font-family: 'FeltTipRomanRegular', Helvetica, sans-serif;
 			font-size: 1.25em;
-			color: #DDD;
+			color: #FFF;
 			content: "<—";
 			margin-left: 4px;
 			position: relative;
+			}
+			
+		#sidebar li a:hover:after, #sidebar li.current_page_item a:after, #sidebar li.current-cat a:after {
+			color: #DDD;
 			}
 			
 		#social-icons img {
@@ -952,14 +959,18 @@ th, td {
 		color: #000000;
 		}
 		
-	#links li ul li a:hover:after, #links li ul li.current-menu-item a:after {
+	#links li ul li a:after {
 			font-family: 'FeltTipRomanRegular', Helvetica, sans-serif;
 			font-size: 1.25em;
-			color: #DDD;
+			color: #FFF;
 			content: "<—";
 			margin-left: 4px;
 			position: relative;
 			top: 0px;
+			}
+			
+	#links li ul li a:hover:after, #links li ul li.current-menu-item a:after {
+			color: #DDD;
 			}	
 	
 /* FOOTER */	

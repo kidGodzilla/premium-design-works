@@ -10,7 +10,7 @@
     <?php the_content(''); ?>
     <ul class="post-navigation">
         <li class="post-navigation-previous"><?php next_post('&laquo;&nbsp;%','', 'yes'); ?></li>
-        <li class="post-navigation-next"><?php previous_post('%&nbsp;&raquo;','', 'yes'); ?></span>
+        <li class="post-navigation-next"><?php previous_post('%&nbsp;&raquo;','', 'yes'); ?></li>
     </ul>
     </article> 
     <?php comments_template(); ?>

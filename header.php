@@ -12,7 +12,7 @@ Author URI: http://www.premiumdw.com/
 -->
     
 <!-- Start Title Tag -->
-<title><?php if ( is_home() || is_archive() || is_front_page()) { bloginfo('description'); } elseif ( is_single() || is_page()) { the_title(); if ( is_page() && $post->post_parent ) { echo ' | '; echo get_the_title($post->post_parent); } } echo ' | '; bloginfo('name'); echo ' | '; echo 'Seattle, WA.'; ?></title>
+<title><?php get_my_title_tag(); ?></title>
 <!-- End Title Tag -->
     
 <!-- Start Meta -->
