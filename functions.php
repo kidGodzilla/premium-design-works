@@ -26,14 +26,19 @@ function show_avatar($comment, $size) {
 	$email=strtolower(trim($comment->comment_author_email));
 	$rating = "G"; // [G | PG | R | X]
 	 
-		if (function_exists('get_avatar')) {
+	if (function_exists('get_avatar')) {
+		
 		echo get_avatar($email, $size);
-		} else {
-      
-		  $grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=
-			 " . md5($emaill) . "&size=" . $size."&rating=".$rating;
-		  echo "<img src='$grav_url'/>";
-   		}		
+	
+	} else {
+  
+	  $grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=
+		 " . md5($emaill) . "&size=" . $size."&rating=".$rating;
+		 
+	  echo "<img src='$grav_url'/>";
+	  
+	}
+	
 }
 //
 
@@ -195,14 +200,13 @@ function get_child_pages() {
 		echo '<article id="page-excerpt-'.$childID.'" class="page-excerpt">';
         echo '<h3><a href="'.$childPermalink.'">'.$childTitle.' &raquo;</a></h3>';
         echo $childExcerpt;
-        echo '<p class="read-more"> <a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>
-        </article>';
+        echo '<p class="read-more"><a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
+        echo '</article>';
         
 	endwhile; endif; 
         
-    } // end function
+}
 //
-	
 	
 // Add a Flexslider Gallery	
 function add_flexslider() { // display attachment images as a flexslider gallery
@@ -309,6 +313,5 @@ function fixed_img_caption_shortcode($attr, $content = null) {
 	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 //
-
 
 ?>
