@@ -13,9 +13,10 @@
     <p class="full-story"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">Full Story&nbsp;&raquo;</a></p>
     </article>
     <?php endwhile; ?>
-    <nav class="post-navigation">
-    <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>  
-	</nav>
+    <ul class="post-navigation">
+    <li class="post-navigation-previous"><?php previous_posts_link( '&laquo;&nbsp;Newer' ) ?></li>
+    <li class="post-navigation-next"><?php next_posts_link( 'Older&nbsp;&raquo;'); ?></li>
+    </ul>
 </div>
 <!-- End ContentT -->
 

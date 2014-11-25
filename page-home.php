@@ -27,12 +27,10 @@
     <p class="full-story"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">Full Story&nbsp;&raquo;</a></p>
     </article>
     <?php endwhile; endif; ?>
-    
     <!-- End Loop 02 -->  
          
     <ul class="post-navigation">
-    <li class="post-navigation-next"><a href="../blog/page/2/">More From The Blog&nbsp;&raquo;</a></li>
-    <?php /*if(function_exists('wp_pagenavi')) { wp_pagenavi();} */ ?>
+    <li class="post-navigation-next"><a href="../blog/page/2/">More&nbsp;&raquo;</a></li>
     </ul>
     
 </div>

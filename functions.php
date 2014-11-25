@@ -86,29 +86,31 @@ add_shortcode( 'poo', 'fling_poo' );
 // Get My Title Tag
 function get_my_title_tag() {
 	
-	if ( is_home() || is_archive() || is_front_page()) { 
+	global $post;
+	
+	if ( is_home() || is_archive() || is_front_page() ) {  // for the Blog (Home) Page, Blog (Archives) Pages or the site’s Front Page
 	
 		bloginfo('description'); // retrieve the site tagline
 	
 	} 
 	
-	elseif ( is_single() || is_page()) { 
+	elseif ( is_page() || is_single() ) { // for your site’s Pages or Postings
 	
-		the_title(); // retrieve the page or posting title
-	
-		if ( is_page() && $post->post_parent ) { 
-	
-			echo ' | '; // separator with spaces
-			echo get_the_title($post->post_parent);  // retrieve the parent page title
-		
-		} 
+		the_title(); // retrieve the page or posting title 
 	
 	} 
+	
+	if ( $post->post_parent ) { // for your site’s Parent Pages
+	
+		echo ' | '; // separator with spaces
+		echo get_the_title($post->post_parent);  // retrieve the parent page title
+		
+	}
 
-echo ' | '; // separator with spaces
-bloginfo('name'); // retrieve the site name
-echo ' | '; // separator with spaces
-echo 'Seattle, WA.'; // write in the location
+	echo ' | '; // separator with spaces
+	bloginfo('name'); // retrieve the site name
+	echo ' | '; // separator with spaces
+	echo 'Seattle, WA.'; // write in the location
 	
 }
 //
@@ -256,6 +258,23 @@ function get_featured_image_with_link() {
 	echo '</figure>';
 	
 }
+//
+
+// Get My Social Icons
+function get_my_social_icons() {
+		
+	$myDirectory = 'http://www.premiumdw.com/wp-content/themes/premium-design-works';
+			
+	echo '<span class="social-icons">';
+	echo '<a title="Mike Sinkula&rsquo;s Twitter Feed" href="http://twitter.com/#!/mikesinkula" target="_blank"><img title="Mike Sinkula&rsquo;s Twitter Feed" src="'.$myDirectory.'/images/ico-twitter.png" alt="Mike Sinkula&rsquo;s Twitter Feed"></a>';
+	echo '<a title="Mike Sinkula&rsquo;s FaceBook Page" href="http://www.facebook.com/msinkula?ref=profile" target="_blank"><img title="Mike Sinkula&rsquo;s FaceBook Page" src="'.$myDirectory.'/images/ico-facebook.png" alt="Mike Sinkula&rsquo;s FaceBook Page"  /></a>';
+	echo '<a title="Mike Sinkula&rsquo;s LinkedIn Profile" href="http://www.linkedin.com/ppl/webprofile?action=vmi&amp;id=5408871&amp;pvs=pp&amp;authToken=C0zy&amp;authType=name&amp;trk=ppro_viewmore&amp;lnk=vw_pprofile" target="_blank"><img title="Mike Sinkula&rsquo;s LinkedIn Profile" src="'.$myDirectory.'/images/ico-linkedin.png" alt="Mike Sinkula&rsquo;s LinkedIn Profile"  /></a>';
+	echo '<a title="Mike Sinkula&rsquo;s YouTube Channel" href="http://www.youtube.com/mikesinkula" target="_blank"><img title="Mike Sinkula&rsquo;s YouTube Channel" src="'.$myDirectory.'/images/ico-youtube.png" alt="Mike Sinkula&rsquo;s YouTube Channel"  /></a>';
+	echo '<a title="Mike Sinkula&rsquo;s Flickr Photo Stream" href="http://www.flickr.com/photos/51088942@N05/" target="_blank"><img title="Mike Sinkula&rsquo;s Flickr Photo Stream" src="'.$myDirectory.'/images/ico-flickr.png" alt="Mike Sinkula&rsquo;s Flickr Photo Stream"  /></a>';
+	echo '</span>';
+	
+}
+
 //
 
 // Remove Inline Styles from Captions

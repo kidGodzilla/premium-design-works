@@ -441,9 +441,9 @@ th, td {
 			margin-bottom: 10px;
 			}
 			
-			#content ul {
-				/*display: inline-block;*/
-				}
+	#content ol {
+		padding-left: 18px;
+	}
 		
 	#content p, #content li {
 		font-size: 1em;
@@ -469,7 +469,7 @@ th, td {
 	}
 			
 	#content ol li	{
-		list-style-position: inside;
+		/*list-style-position: inside;*/
 		line-height: 150%;
 		}
 			
@@ -481,7 +481,7 @@ th, td {
 		}
 	
 	#content ul.post-navigation li {
-		width: 48%;
+		width: 50%;
 		}
 	
 	#content ul.post-navigation li a {
@@ -531,24 +531,61 @@ th, td {
 	#content pre {
 		padding: 10px;
 		border: 2px solid #ddd;
+		border-radius: 0;
 		margin-bottom: 10px;
-		background: #EFEFEF;
-		overflow: auto;
-		white-space: pre-wrap;
+		background: #FFF;
+		overflow:auto;
+		word-wrap: normal !important;
+		
+		
 		line-height: 125%;
 		}
 		
 	#content blockquote {
 		margin: 20px 0;
-		padding: 0px 20px;
+		padding: 10px 0;
 		position: relative;
-		border-left: 3px solid #ddd;
+		border-top: 3px solid #ddd;
+		border-bottom: 3px solid #ddd;
 		}
 		
 	#content blockquote p {
-		margin-bottom: 10px;
 		font-size: 1.125em;
+		line-height: 150%;
 		font-style: italic;
+		padding-left: 24px;
+		text-indent: -20px;
+		}
+		
+		
+		#content blockquote p:before {
+			font-family: 'ArialMTStdBlack', Helvetica, sans-serif;
+			font-size: 2em;
+			color: #DDD;
+			content: "“";
+			position: relative;
+			top: 8px;
+			left: -8px;
+			}
+			
+		/*#content blockquote p:after {
+			font-family: 'FeltTipRomanRegular', Helvetica, sans-serif;
+			font-size: 2em;
+			color: #DDD;
+			content: "”";
+			position: relative;
+			top: 14px;
+			margin-left: 2px;
+			}*/
+		
+	#content blockquote p:last-child {
+		font-size: .875em;
+		text-align: right;
+		margin-bottom: 2px;
+		}
+		
+		#content blockquote p:last-child:before, #content blockquote p:last-child:after {
+			content: none;
 		}
 		
 	#content h2	{
@@ -703,7 +740,7 @@ th, td {
 	/* COMMENTS */
 	#content p.dedication {
 		clear: both;
-		padding: 6px 0;
+		padding: 10px 0;
 		border-top: 2px solid #DDD;
 		border-bottom: 2px solid #DDD;
 		overflow:hidden;
@@ -805,17 +842,16 @@ th, td {
 		}
 	
 	.reply {
-		font-size:0.625em;
+		font-size:0.875em;
 		}
 		
 	.comment-meta {
-		/*display:none;*/
-		font-size:0.625em;
+		font-size:0.875em;
 		}
 		
 	.avatar {
 		float: left;
-		margin: 0 10px 10px 0;		
+		margin: 0 20px 20px 0;		
 		}
 		
 	/* SIDEBAR */

@@ -16,7 +16,12 @@
 ?>
 
 <!-- Begin Author Dedication -->
-<p class="dedication"><a href="http://www.mikesinkula.com/" title="Link to: http://www.mikesinkula.com/" target="_blank"><img class="myface" src="<?php bloginfo('template_directory'); ?>/images/img-myface.jpg" /></a><?php echo get_the_author_meta('description'); ?><span class="social-icons"><a title="Mike Sinkula's Twitter Feed" href="http://twitter.com/#!/mikesinkula" target="_blank"><img title="Mike Sinkula's Twitter Feed" src="<?php bloginfo('template_directory'); ?>/images/ico-twitter.png" alt="Mike Sinkula's Twitter Feed"  /></a><a title="Mike Sinkula's FaceBook Page" href="http://www.facebook.com/msinkula?ref=profile" target="_blank"><img title="Mike Sinkula's FaceBook Page" src="<?php bloginfo('template_directory'); ?>/images/ico-facebook.png" alt="Mike Sinkula's FaceBook Page"  /></a><a title="Mike Sinkula's LinkedIn Profile" href="http://www.linkedin.com/ppl/webprofile?action=vmi&amp;id=5408871&amp;pvs=pp&amp;authToken=C0zy&amp;authType=name&amp;trk=ppro_viewmore&amp;lnk=vw_pprofile" target="_blank"><img title="Mike Sinkula's LinkedIn Profile" src="<?php bloginfo('template_directory'); ?>/images/ico-linkedin.png" alt="Mike Sinkula's LinkedIn Profile"  /></a><a title="Mike Sinkula's YouTube Channel" href="http://www.youtube.com/mikesinkula" target="_blank"><img title="Mike Sinkula's YouTube Channel" src="<?php bloginfo('template_directory'); ?>/images/ico-youtube.png" alt="Mike Sinkula's YouTube Channel"  /></a><a title="Mike Sinkula's Flickr Photo Stream" href="http://www.flickr.com/photos/51088942@N05/" target="_blank"><img title="Mike Sinkula's Flickr Photo Stream" src="<?php bloginfo('template_directory'); ?>/images/ico-flickr.png" alt="Mike Sinkula's Flickr Photo Stream"  /></a></span></p>
+<p class="dedication">
+<a href="http://www.mikesinkula.com/" title="Link to: http://www.mikesinkula.com/" target="_blank"><img class="myface" src="<?php bloginfo('template_directory'); ?>/images/img-myface.jpg" />
+</a>
+<?php echo get_the_author_meta('description'); ?>
+<?php get_my_social_icons(); ?>
+</p>
 <!-- End Author Dedication -->
 
 <!-- You can start editing here. -->
@@ -59,15 +64,11 @@
 <p>Don't forget to get your <a href="http://en.gravatar.com/" target="_blank">Globally Recognized Avatar</a>.</p>
 <label for="author">Name: <?php /*if ($req) echo "(required)";*/ ?></label>
 <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>"  tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-
 <label for="email">Mail: <?php /*if ($req) echo "(required)";*/ ?></label>
 <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>"  tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-
 <label for="url">Website:</label>
 <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>"  tabindex="3" />
-
 <?php endif; ?>
-<!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
 <label for="comment">Comment:</label>
 <textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea>
 <input name="submit" type="submit" class="submit" tabindex="5" value="Submit Comment" />
