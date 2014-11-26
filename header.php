@@ -35,23 +35,15 @@ Author URI: http://www.premiumdw.com/
     
 <!-- Start Links -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/icons/flaticon.css" type="text/css">
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/flame.ico" />
 <!-- End Links -->
     
 <!-- Start Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/spotlight-page.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/toggle.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/scripts.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/flexslider.js"></script> 
-<script type="text/javascript" charset="utf-8">
-	$(window).load(function() {
-		$('.flexslider').flexslider();
-	});
-</script>
 <!-- End Scripts -->
 
 <!--[if lt IE 9]><script type="text/javascript"> window.onload = function() { window.location = "../?p=1455" };</script><![endif]-->
@@ -81,7 +73,7 @@ Author URI: http://www.premiumdw.com/
     
     <!-- Start Toggle -->
     <div id="toggle">
-    	<a href="#">&#8801;&nbsp;Menu<!--<img src="<?php bloginfo('template_directory'); ?>/images/img-toggle.png" />--></a>
+    	<a href="#">&#8801;&nbsp;Menu</a>
     </div>
     <!-- END Toggle -->
     
