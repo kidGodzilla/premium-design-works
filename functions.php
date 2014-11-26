@@ -2,23 +2,37 @@
 
 // Link to admin styles
 add_editor_style( 'admin.css' );
+//
 
-//  Register Sidebar
+//  Register My Sidebar
 register_sidebar(array(
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
 	'before_title' => '<h2>',
 	'after_title' => '</h2>',
 ));
+//
 
-// Register Menus
+// Register My Menus
 function register_my_menus() {
+	
   register_nav_menus(array(
       'main-menu' => __( 'Main Menu' ),
       'footer-menu' => __( 'Footer Menu' )
     ));
+	
 }
+
 add_action( 'init', 'register_my_menus' );
+//
+
+// Create Post Thumbnails
+add_theme_support( 'post-thumbnails' );
+//
+
+// Create Page Excerpts
+add_post_type_support( 'page', 'excerpt' );
+//
 
 //  Show Gravatars
 function show_avatar($comment, $size) {	
@@ -40,52 +54,6 @@ function show_avatar($comment, $size) {
 	}
 	
 }
-//
-
-// Create Post Thumbnails
-add_theme_support( 'post-thumbnails' );
-//
-
-// Create Page Excerpts
-add_post_type_support( 'page', 'excerpt' );
-//
-
-// Get Gateway Page Spotlights
-function get_gateway_spotlights() {
-	
-	if (is_page( 'About' )): ?>
-    <div id="spotlight-page">
-        <span id="word-one">ideas.</span>
-        <span id="word-two">process.</span>
-        <span id="word-three">teamwork.</span>
-    </div>
-    <?php endif; ?>
-    <?php if (is_page( 'Services' )): ?>
-    <div id="spotlight-page">
-        <span id="word-one">strategize.</span>
-        <span id="word-two">design.</span>
-        <span id="word-three">develop.</span>
-    </div>
-    <?php endif; ?>
-    <?php if (is_page( 'Portfolio' )): ?>
-    <div id="spotlight-page">
-        <span id="word-one">design.</span>
-        <span id="word-two">present.</span>
-        <span id="word-three">impress.</span>
-    </div>
-    <?php endif;
-}
-//
-
-// Hu Flung Pu
-function fling_poo() {
-	
-	$poo = '<p>Your mom flung poo.</p>';
-	
-	return $poo;	
-}
-
-add_shortcode( 'poo', 'fling_poo' );
 //
 
 // Get My Title Tag
@@ -116,6 +84,61 @@ function get_my_title_tag() {
 	bloginfo('name'); // retrieve the site name
 	echo ' | '; // separator with spaces
 	echo 'Seattle, WA.'; // write in the location
+	
+}
+//
+
+// Get Gateway Page Spotlights
+function get_gateway_spotlights() {
+	
+	global $post;
+	
+	$word01 = get_post_meta($post->ID, 'word-01', true);
+	$word02 = get_post_meta($post->ID, 'word-02', true);
+	$word03 = get_post_meta($post->ID, 'word-03', true);
+	
+	if ( $word01 || $word02 || $word03 ) {
+	
+		echo '<div id="spotlight-page">';
+		echo '<span id="word-one">'.$word01.'</span>';
+		echo '<span id="word-two">'.$word02.'</span>';
+		echo '<span id="word-three">'.$word03.'</span>';
+		echo '</div>';
+		
+	}
+	
+	/*
+	if ( is_page('About') || is_page('Services') || is_page('Portfolio') ) {
+	
+		echo '<div id="spotlight-page">';
+	
+		if ( is_page('About') ) {
+		
+			echo '<span id="word-one">ideas.</span>';
+			echo '<span id="word-two">process.</span>';
+			echo '<span id="word-three">teamwork.</span>';
+			
+		}
+		
+		if ( is_page('Services') ) {
+		   
+			echo '<span id="word-one">strategize.</span>';
+			echo '<span id="word-two">design.</span>';
+			echo '<span id="word-three">develop.</span>';
+			
+		}
+		
+		if ( is_page('Portfolio') ) {
+		   
+			echo '<span id="word-one">design.</span>';
+			echo '<span id="word-two">present.</span>';
+			echo '<span id="word-three">impress.</span>';
+			
+		}
+   
+		echo '</div>';
+   
+	}*/
 	
 }
 //
