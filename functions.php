@@ -201,30 +201,28 @@ function get_child_pages() {
 // Add a Flexslider Gallery	
 function add_flexslider() { // display attachment images as a flexslider gallery
 
-$attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
+	$attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
 
-	if ($attachments) { // see if there are images attached to posting ?>
+	if ($attachments) { // see if there are images attached to posting
 	
-	<div id="spotlight-home" class="flexslider">
-	<ul class="slides">
+		echo '<div id="spotlight-home" class="flexslider">';
+		echo '<ul class="slides">';
+		
+		foreach ( $attachments as $attachment_id => $attachment ) { // create the list items for images with captions
+		
+			echo '<li>';
+			echo wp_get_attachment_image($attachment_id, 'full'); // get image size large
+			echo '<span class="description">';
+			echo get_post_field('post_content', $attachment->ID); // get image description field
+			echo '</span>';
+			echo '</li>';
+		
+		}
 	
-	<?php // create the list items for images with captions
+		echo '</ul>';
+		echo '</div>';
 	
-	foreach ( $attachments as $attachment_id => $attachment ) {
-	
-		echo '<li>';
-		echo wp_get_attachment_image($attachment_id, 'full');
-		echo '<span class="description">';
-		echo get_post_field('post_content', $attachment->ID); // description field
-		echo '</span>';
-		echo '</li>';
-	
-	} ?>
-	
-	</ul>
-	</div>
-	
-	<?php } // end see if images
+	} // end see if images attachmed
 
 } 
 // 
