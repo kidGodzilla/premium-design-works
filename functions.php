@@ -107,39 +107,6 @@ function get_gateway_spotlights() {
 		
 	}
 	
-	/*
-	if ( is_page('About') || is_page('Services') || is_page('Portfolio') ) {
-	
-		echo '<div id="spotlight-page">';
-	
-		if ( is_page('About') ) {
-		
-			echo '<span id="word-one">ideas.</span>';
-			echo '<span id="word-two">process.</span>';
-			echo '<span id="word-three">teamwork.</span>';
-			
-		}
-		
-		if ( is_page('Services') ) {
-		   
-			echo '<span id="word-one">strategize.</span>';
-			echo '<span id="word-two">design.</span>';
-			echo '<span id="word-three">develop.</span>';
-			
-		}
-		
-		if ( is_page('Portfolio') ) {
-		   
-			echo '<span id="word-one">design.</span>';
-			echo '<span id="word-two">present.</span>';
-			echo '<span id="word-three">impress.</span>';
-			
-		}
-   
-		echo '</div>';
-   
-	}*/
-	
 }
 //
 
