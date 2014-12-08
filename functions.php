@@ -97,7 +97,7 @@ function get_gateway_spotlights() {
 	$get = explode("," , $words);
 	
 	$word01 = $get[0];
-	$word02 = $get[1];`
+	$word02 = $get[1];
 	$word03 = $get[2];
 	
 	if ( $words ) {
