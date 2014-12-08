@@ -93,16 +93,19 @@ function get_gateway_spotlights() {
 	
 	global $post;
 	
-	$word01 = get_post_meta($post->ID, 'word-01', true);
-	$word02 = get_post_meta($post->ID, 'word-02', true);
-	$word03 = get_post_meta($post->ID, 'word-03', true);
+	$words = get_post_meta($post->ID, 'spotlight-page', true);
+	$get = explode("," , $words);
 	
-	if ( $word01 || $word02 || $word03 ) {
+	$word01 = $get[0];
+	$word02 = $get[1];`
+	$word03 = $get[2];
+	
+	if ( $words ) {
 	
 		echo '<div id="spotlight-page">';
-		echo '<span id="word-one">'.$word01.'</span>';
-		echo '<span id="word-two">'.$word02.'</span>';
-		echo '<span id="word-three">'.$word03.'</span>';
+		echo '<span id="word-one">'.$word01.'. </span>';
+		echo '<span id="word-two">'.$word02.'. </span>';
+		echo '<span id="word-three">'.$word03.'. </span>';
 		echo '</div>';
 		
 	}
@@ -163,7 +166,7 @@ function get_featured_case_study($atts) {
 	$caseImage = get_the_post_thumbnail($myPostID, 'thumbnail'); // get featured thumbnail
 	$caseLink = get_permalink( $myPosting->ID ); // get permalink
 	
-	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">Case Study: '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.' <a href="'.$caseLink.'">Read More&nbsp;&raquo;</a></p></section>'; // write it up...
+	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">Case Study: '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.'&nbsp;<a href="'.$caseLink.'">Read More&nbsp;&raquo;</a></p></section>'; // write it up...
 	
 	return $myCaseStudy; // ... and return it, bitch.
 	
@@ -190,7 +193,7 @@ function get_child_pages() {
 		echo '<article id="page-excerpt-'.$childID.'" class="page-excerpt">';
 		echo '<h3><a href="'.$childPermalink.'">'.$childTitle.' &raquo;</a></h3>';
 		echo $childExcerpt;
-		echo '<p class="read-more"><a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
+		echo '<p class="read-more">&nbsp;<a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
 		echo '</article>';
         
 	endwhile; endif; 
