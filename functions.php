@@ -94,13 +94,13 @@ function get_gateway_spotlights() {
 	global $post;
 	
 	$words = get_post_meta($post->ID, 'spotlight-page', true);
-	$get = explode("," , $words);
+	$get = explode(',' , $words);
 	
 	$word01 = $get[0];
 	$word02 = $get[1];
 	$word03 = $get[2];
 	
-	if ( $words ) {
+	if ($words) {
 	
 		echo '<div id="spotlight-page">';
 		echo '<span id="word-one">'.$word01.'. </span>';
@@ -192,8 +192,7 @@ function get_child_pages() {
         
 		echo '<article id="page-excerpt-'.$childID.'" class="page-excerpt">';
 		echo '<h3><a href="'.$childPermalink.'">'.$childTitle.' &raquo;</a></h3>';
-		echo $childExcerpt;
-		echo '<p class="read-more">&nbsp;<a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
+		echo '<p>'.$childExcerpt.' <a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
 		echo '</article>';
         
 	endwhile; endif; 

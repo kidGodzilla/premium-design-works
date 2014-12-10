@@ -923,7 +923,7 @@ th, td {
 			position: relative;
 			}
 			
-		#sidebar li a:hover:after, #sidebar li.current_page_item a:after, #sidebar li.current-cat a:after {
+		#sidebar li a:hover:after, #sidebar li.current_page_item a:after, #sidebar li.current_page_parent a:after, #sidebar li.current-cat a:after {
 			color: #DDD;
 			}
 			
