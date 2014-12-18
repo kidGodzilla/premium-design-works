@@ -82,6 +82,7 @@ Author URI: http://www.premiumdw.com/
 
 <!-- Start Main Menu -->
 <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => 'div','container_id' => 'navigation' ) ); ?>
+
 <!-- End Main Menu -->
 
 <!-- Start Middle -->

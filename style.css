@@ -422,13 +422,11 @@ th, td {
 		display: block;
 	}	
 	
-	section.featured-case {
+	section.featured-case, section.search-again {
 		margin-top: 20px;
 		margin-bottom: 10px;
 		border-top: 2px solid #DDD;
-		/*border-bottom: 1px dotted #000;*/
-		padding-top: 4px;
-		padding-bottom: 4px;
+		padding: 10px 0;
 		overflow: hidden;
 	}
 	
@@ -651,7 +649,7 @@ th, td {
 		appearance: none; 
 		}
 		
-	#content input.submit, #content input.wpcf7-submit {
+	#content input.submit, #content input.wpcf7-submit, #searchsubmit {
 		border-radius: 5px;
 		width: auto;
 		color: #000;
@@ -662,7 +660,7 @@ th, td {
 		background: linear-gradient(#FFF, #DDD); /* Standard syntax */
 	}
 	
-	#content input.submit:hover, #content input.wpcf7-submit:hover {
+	#content input.submit:hover, #content input.wpcf7-submit:hover, #searchsubmit:hover {
 		border: 2px solid #C4122F;
 		background: #C4122F;
 		color: #FFF;

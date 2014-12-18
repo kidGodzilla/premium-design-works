@@ -73,6 +73,12 @@ function get_my_title_tag() {
 	
 	} 
 	
+	else { // for everything else like 404, etc.
+		
+		bloginfo('description'); // retrieve the site tagline
+		
+	}
+	
 	if ( $post->post_parent ) { // for your site’s Parent Pages
 	
 		echo ' | '; // separator with spaces

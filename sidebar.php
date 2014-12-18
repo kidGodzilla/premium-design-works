@@ -2,7 +2,7 @@
 <div id="sidebar">    
 
 	<!-- Begin Home Page Tree Navigation -->
-    <?php wp_reset_query(); if (is_front_page()) { ?>
+    <?php wp_reset_query(); if (is_front_page() || is_404() || is_search() ) { ?>
 		
         <div id="page-tree" class="widget">
             <h2>About</h2>
@@ -37,7 +37,7 @@
 	
 	}
 
-	if ($children) { // if has children ?>
+	if ($children && !(is_404)) { // if has children ?>
 
         <div id="sub-navigation" class="widget">
         <h2 class="sub-navigation-title"><?php echo $parentname; ?></h2>
@@ -63,7 +63,7 @@
     <!-- End Attachment Navigation  -->
         
     <!-- Begin Category Navigation -->
-    <?php wp_reset_query(); if ( is_single() || is_archive() || is_home() || is_front_page() ) { ?>
+    <?php wp_reset_query(); if ( is_single() || is_archive() || is_home() || is_front_page() || is_404() || is_search() ) { ?>
     
         <div id="blog-categories" class="widget">
             <h2 id="blog-categories-head">Blog</h2>
