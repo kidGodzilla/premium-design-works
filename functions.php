@@ -61,7 +61,7 @@ function get_my_title_tag() {
 	
 	global $post;
 	
-	if ( is_home() || is_archive() || is_front_page() ) {  // for the Blog (Home) Page, Blog (Archives) Pages or the site’s Front Page
+	if ( is_front_page() ) {  // for the site’s Front Page
 	
 		bloginfo('description'); // retrieve the site tagline
 	
@@ -73,7 +73,7 @@ function get_my_title_tag() {
 	
 	} 
 	
-	else { // for everything else like 404, etc.
+	else { // for everything else
 		
 		bloginfo('description'); // retrieve the site tagline
 		
