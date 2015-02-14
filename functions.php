@@ -1,4 +1,4 @@
-<?php 
+<?php // Premium Design Works 
 
 // Link to admin styles
 add_editor_style( 'admin.css' );
@@ -187,9 +187,9 @@ function get_child_pages() {
 	global $post;
 	
 	rewind_posts(); // stop any previous loops 
-	query_posts(array('post_type' => 'page','numberposts' => -1,'post_status' => null,'post_parent' => $post->ID,'order' => 'ASC','orderby' => 'menu_order')); // query and order child pages 
+	query_posts(array('post_type' => 'page', 'posts_per_page' => -1, 'post_status' => publish,'post_parent' => $post->ID,'order' => 'ASC','orderby' => 'menu_order')); // query and order child pages 
     
-	if (have_posts()) : while (have_posts()) : the_post(); 
+	while (have_posts()) : the_post(); 
 	
 		$childPermalink = get_permalink( $post->ID ); // post permalink
 		$childID = $post->ID; // post id
@@ -201,7 +201,10 @@ function get_child_pages() {
 		echo '<p>'.$childExcerpt.' <a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
 		echo '</article>';
         
-	endwhile; endif; 
+	endwhile;
+	
+	// reset query
+	wp_reset_query();
         
 }
 //

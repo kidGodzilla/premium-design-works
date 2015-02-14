@@ -10,12 +10,14 @@
 <div id="content">
 
     <!-- Start Loop 01 -->
+    <h2>About Us</h2>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<?php the_content(''); ?>
 	<?php endwhile; endif; ?>
     <!-- End Loop 01 -->
         
     <!-- Start Loop 02 -->
+    <h2>Latest Postings</h2>
     <?php rewind_posts(); // stop loop one ?>
     <?php query_posts('showposts=5'); // show 5 latest posts ?>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -29,9 +31,11 @@
     <?php endwhile; endif; ?>
     <!-- End Loop 02 -->  
          
+    <!-- Begin Post Navigation -->
     <ul class="post-navigation">
     <li class="post-navigation-next"><a href="../blog/page/2/">More&nbsp;&raquo;</a></li>
     </ul>
+    <!-- End Post Navigation -->
     
 </div>
 <!-- End Content -->

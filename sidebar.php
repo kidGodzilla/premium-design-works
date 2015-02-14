@@ -5,10 +5,10 @@
     <?php wp_reset_query(); if (is_front_page() || is_404() || is_search() ) { ?>
 		
         <div id="page-tree" class="widget">
-            <h2>About</h2>
+            <!--<h2>About</h2>
             <ul>
-            <?php echo wp_list_pages("title_li=&child_of=184"); ?>
-            </ul>
+            <?php /*echo wp_list_pages("title_li=&child_of=184");*/ ?>
+            </ul>-->
             <h2>Services</h2>
             <ul>
             <?php echo wp_list_pages("title_li=&child_of=185"); ?>
@@ -37,7 +37,7 @@
 	
 	}
 
-	if ($children && !(is_404)) { // if has children ?>
+	if (!(is_404() || is_search())) { if ($children) {  // if isn't 404 or search and has children ?>
 
         <div id="sub-navigation" class="widget">
         <h2 class="sub-navigation-title"><?php echo $parentname; ?></h2>
@@ -46,7 +46,7 @@
         </ul>
         </div>
         
-    <?php }	?> 
+    <?php } } ?> 
     <!-- End Sub-Page Navigation -->
     
     <!-- Begin Attachment Navigation -->
@@ -88,6 +88,18 @@
         </ul>
     </div>
     <!-- End Contact -->
+    
+    <!-- Begin Social Icons -->
+    <div id="social-icons" class="widget">
+    	<h2>Social</h2>
+        <ul id="social-icons">
+        <li><a href="https://www.facebook.com/premiumdw" class="flaticon-facebook29" target="_blank"> Facebook</a></li>
+        <li><a href="https://twitter.com/premiumdw" class="flaticon-social38" target="_blank"> Twitter</a></li>
+        <li><a href="https://plus.google.com/+PremiumDesignWorksSeattle/" class="flaticon-social5" target="_blank" rel="me"> Google+</a></li>
+        <li><a href="https://www.youtube.com/channel/UCJkdeoIJ9lbsDOW0Ctiqsyw/" class="flaticon-youtube4" target="_blank"> YouTube</a></li>
+        </ul>
+    </div>
+    <!-- End Social Icons -->
     
 </div>
 <!-- End Sidebar -->

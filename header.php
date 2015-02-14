@@ -17,27 +17,31 @@ Author URI: http://www.premiumdw.com/
     
 <!-- Start Meta -->
 <meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>" />
+<meta name="keywords" content="Logo Design, Print Design, Graphic Design, Brand Strategy, Web Design, Web Development, Search Engine Optiomization (SEO), Seattle, Washington" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
 <!-- End Meta -->
 	
 <!-- Begin Open Graph Meta for Facebook -->
-<meta property="og:title" content="<?php the_title(); ?>"/>
+<meta property="og:title" content="<?php get_my_title_tag(); ?>"/>
 <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
 <meta property="og:url" content="<?php the_permalink(); ?>"/>
-<?php $fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'thumbnail'); ?>
+<?php $fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'large'); ?>
 <?php if ($fb_image) : ?>
 <meta property="og:image" content="<?php echo $fb_image[0]; ?>" />
 <?php endif; ?>
 <meta property="og:type" content="<?php if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>"
 />
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
+<meta property="article:publisher" content="https://www.facebook.com/premiumdw" />
 <!-- End Open Graph Meta for Facebook -->
     
 <!-- Start Links -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css">
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/icons/flaticon.css" type="text/css">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/flame.ico" />
+<link rel="publisher" href="https://plus.google.com/+PremiumDesignWorksSeattle/" />
 <!-- End Links -->
     
 <!-- Start Scripts -->

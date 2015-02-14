@@ -8,8 +8,8 @@
     <h2><?php the_title(); ?></h2>
     <?php get_gateway_spotlights(); // get gateway page spotlights ?>
     <?php the_content(''); // get written page content ?>
+     </article>
 	<?php endwhile; endif; ?>
-    </article>
     <?php get_child_pages(); ?>
         
 </div>
