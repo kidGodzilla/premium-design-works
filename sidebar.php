@@ -5,10 +5,6 @@
     <?php wp_reset_query(); if (is_front_page() || is_404() || is_search() ) { ?>
 		
         <div id="page-tree" class="widget">
-            <!--<h2>About</h2>
-            <ul>
-            <?php /*echo wp_list_pages("title_li=&child_of=184");*/ ?>
-            </ul>-->
             <h2>Services</h2>
             <ul>
             <?php echo wp_list_pages("title_li=&child_of=185"); ?>

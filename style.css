@@ -648,7 +648,11 @@ th, td {
 		font-weight: 500;
 		margin-bottom: 4px;
 		padding-top: 8px;
-		}	
+		}
+		
+	#content h4 a {
+		color: #C4122F;
+	}
 	
 	textarea, input, select { 
 		font-size: 1em;
