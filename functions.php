@@ -211,8 +211,10 @@ function get_child_pages() {
 	
 // Add a Flexslider Gallery	
 function add_flexslider() {
+	
+	global $post;
 
-	$attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image', ));
+	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image', ));
 
 	if ($attachments) { // see if there are images attached to posting
 	
