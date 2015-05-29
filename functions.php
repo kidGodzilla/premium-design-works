@@ -212,7 +212,7 @@ function get_child_pages() {
 // Add a Flexslider Gallery	
 function add_flexslider() {
 	
-	global $post;
+	global $post; // don't forget to make this a global variable inside your function
 
 	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image', ));
 
