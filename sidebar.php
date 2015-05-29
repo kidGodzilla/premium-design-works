@@ -97,5 +97,13 @@
     </div>
     <!-- End Social Icons -->
     
+    <!--- Begin Facebook Thingy 
+    <div class="fb-page widget" data-href="https://www.facebook.com/premiumdw" data-width="Max 300" data-height="600" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+        <div class="fb-xfbml-parse-ignore">
+        <blockquote cite="https://www.facebook.com/premiumdw"><a href="https://www.facebook.com/premiumdw">Premium Design Works</a></blockquote>
+        </div>
+    </div>
+    <!-- End Facebook Thingy -->
+    
 </div>
 <!-- End Sidebar -->
