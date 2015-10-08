@@ -214,7 +214,7 @@ function add_flexslider() {
 	
 	global $post; // don't forget to make this a global variable inside your function
 
-	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image', ));
+	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image',));
 
 	if ($attachments) { // see if there are images attached to posting
 	

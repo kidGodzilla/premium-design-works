@@ -47,6 +47,7 @@ Author URI: http://www.premiumdw.com/
 <!-- Start Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/scripts.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/navigation.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/flexslider.js"></script> 
 <!-- End Scripts -->
 

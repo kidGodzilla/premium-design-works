@@ -357,20 +357,29 @@ th, td {
 				background: #ddd;
 				}
 				
-		#content img.attachment-thumbnail, #content img.size-thumbnail {
+		#content img.attachment-thumbnail, 
+		#content img.size-thumbnail {
 			float: left;
 			margin: 6px 20px 10px 0;
 		}
 		
-		#content img.attachment-medium, #content img.size-medium {
+		#content img.attachment-medium, 
+		#content img.size-medium {
 			float: left;
 			margin: 6px 20px 10px 0;
 		}
 		
-		#content img.attachment-large, #content img.size-large, #content img.attachment-full, #content img.size-full  {
+		#content img.attachment-large, 
+		#content img.size-large, 
+		#content img.attachment-full, 
+		#content img.size-full  {
 			/*margin: 0 auto;*/
 			margin-bottom: 10px;
 			
+		}
+		
+		#content.attachment img {
+			/*border: none;*/	
 		}
 		
 		#content figure.featured-image img {
@@ -667,7 +676,9 @@ th, td {
 		appearance: none; 
 		}
 		
-	#content input.submit, #content input.wpcf7-submit, #searchsubmit {
+	#content input.submit, 
+	#content input.wpcf7-submit, 
+	#searchsubmit {
 		border-radius: 5px;
 		width: auto;
 		color: #000;
@@ -678,10 +689,44 @@ th, td {
 		background: linear-gradient(#FFF, #DDD); /* Standard syntax */
 	}
 	
-	#content input.submit:hover, #content input.wpcf7-submit:hover, #searchsubmit:hover {
+	#content input.submit:hover, 
+	#content input.wpcf7-submit:hover, 
+	#searchsubmit:hover {
 		border: 2px solid #C4122F;
 		background: #C4122F;
 		color: #FFF;
+	}
+	
+	#content li.view-button {
+		font-weight: bold;
+		display: inline-block;
+		margin-right: 6px;
+	}
+	
+	#content li.view-button a {
+		font-size: 1em;
+		font-style: normal;
+		/*display: inline-block;*/
+		width: auto;
+		box-sizing: border-box;
+		border: 2px solid #DDD;
+		border-radius: 5px;
+		padding: 4px 8px;
+		margin-bottom: 10px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none; 
+		background: linear-gradient(#FFF, #DDD); /* Standard syntax */
+	}
+	
+	#content li.view-button a:hover {
+		border: 2px solid #C4122F;
+		background: #C4122F;
+		color: #FFF;
+	}
+	
+	#content li.view-button:before {
+		content: none;
 	}
 			
 		.wp-caption-text  {
