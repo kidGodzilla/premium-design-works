@@ -78,7 +78,7 @@ Author URI: http://www.premiumdw.com/
     
     <!-- Start Toggle -->
     <div id="toggle">
-    	<a href="#">&#8801;&nbsp;Menu</a>
+    	<a href="#"><span class="glyph">&#8801;</span>&nbsp;Menu</a>
     </div>
     <!-- END Toggle -->
     

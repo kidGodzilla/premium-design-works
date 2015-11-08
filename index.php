@@ -14,8 +14,8 @@
     </article>
     <?php endwhile; ?>
     <ul class="post-navigation">
-    <li class="post-navigation-previous"><?php previous_posts_link( '&laquo;&nbsp;Previous' ) ?></li>
-    <li class="post-navigation-next"><?php next_posts_link( 'Next&nbsp;&raquo;'); ?></li>
+    <li class="post-navigation-previous"><?php previous_posts_link( '&laquo;&nbsp;Newer' ) ?></li>
+    <li class="post-navigation-next"><?php next_posts_link( 'Older&nbsp;&raquo;'); ?></li>
     </ul>
 </div>
 <!-- End ContentT -->

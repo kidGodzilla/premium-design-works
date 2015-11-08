@@ -116,6 +116,7 @@ th, td {
 		right: 20px;
 		bottom: 4px;
 		font-size: 1em;
+		text-transform: capitalize;
 	}
 	
 	#toggle a {
