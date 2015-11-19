@@ -1,18 +1,16 @@
+/*  
+Theme Name: Premium Design Works
+Script Description: This is a navigation script that your mom would be responsive to.
+Author: Premium Design Works
+Author URI: http://www.premiumdw.com/
+*/
+
 $(window).load(function() { // when the window loads...
 		
 	$("#toggle").click(function() { 
-		$("#navigation").slideToggle(); // toggle main menu
+		$("#navigation").slideToggle(); // toggle main-menu
 		return false;
 	});
-	
-	/*var mainToggle = function() {
-		
-		$("#navigation").slideToggle(); // slide toggle main menu
-		return false;
-		
-	};
-	
-	$("#toggle").on("click", mainToggle); // trigger main toggle function*/
 	
 	var loadWidth = window.innerWidth; // save window load width as a variable
 	
