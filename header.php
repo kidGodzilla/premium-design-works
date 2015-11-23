@@ -70,8 +70,8 @@ Author URI: http://www.premiumdw.com/
     <!-- Start Utility -->
     <div id="utility">
         <ul>
-        <li><a href="http://www.sccc.premiumdw.com">Students</a></li>
-        <li><a href="http://www.clients.premiumdw.com/">Clients</a></li>
+        <li><a href="http://www.sccc.premiumdw.com" target="_blank">Students</a></li>
+        <li><a href="http://www.clients.premiumdw.com/" target="_blank">Clients</a></li>
         </ul>
     </div>
     <!-- End Utility -->
