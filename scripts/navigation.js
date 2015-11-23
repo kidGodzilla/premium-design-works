@@ -9,7 +9,7 @@ $(window).load(function() { // when the window loads...
 		
 	$("#toggle").click(function() { 
 		$("#navigation").slideToggle(); // toggle main-menu
-		return false;
+		return false; // disable anchor tag target
 	});
 	
 	var loadWidth = window.innerWidth; // save window load width as a variable
