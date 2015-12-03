@@ -178,7 +178,7 @@ function get_featured_case_study($atts) {
 	
 }
 
-add_shortcode('casestudy', 'get_featured_case_study');
+add_shortcode('casestudy', 'get_featured_case_study'); // create the shortcode for the function
 //
 
 // Get Child Pages 
