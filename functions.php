@@ -203,8 +203,7 @@ function get_child_pages() {
         
 	endwhile;
 	
-	// reset query
-	wp_reset_query();
+	wp_reset_query(); // reset query
         
 }
 //
