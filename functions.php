@@ -121,17 +121,19 @@ function get_gateway_spotlights() {
 
 // Get Portfolio Galleries
 function get_portfolio() {
+    
+    global $post; // don't forget to make this a global variable inside your function
 		
-	$attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order','post_type' => 'attachment'));
+	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order','post_type' => 'attachment'));
 			
 	if ($attachments) { 	
 	
 		$portfolio;
 
-		foreach ( $attachments as $attachment_id => $attachment ) { 
+		foreach ( $attachments as $attachment ) { 
 		
-			$myPermalink = get_permalink($attachment_id); // link to attachment page
-			$myImage = wp_get_attachment_image($attachment_id, 'medium'); // image
+			$myPermalink = get_permalink($attachment->ID); // link to attachment page
+			$myImage = wp_get_attachment_image($attachment->ID, 'medium'); // image
 			$myTitle = apply_filters('the_title', $attachment->post_title); // title
 			$myCaption = get_post_field('post_excerpt', $attachment->ID); // caption
 			
@@ -170,7 +172,7 @@ function get_featured_case_study($atts) {
 	$caseTitle = $myPosting->post_title; // get title
 	$caseExcerpt = $myPosting->post_excerpt; // get excerpt
 	$caseImage = get_the_post_thumbnail($myPostID, 'thumbnail'); // get featured thumbnail
-	$caseLink = get_permalink( $myPosting->ID ); // get permalink
+	$caseLink = get_permalink($myPosting->ID); // get permalink
 	
 	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">Case Study: '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.'&nbsp;<a href="'.$caseLink.'">Read More&nbsp;&raquo;</a></p></section>'; // write it up...
 	
@@ -220,10 +222,10 @@ function add_flexslider() {
 		echo '<div id="spotlight-home" class="flexslider">';
 		echo '<ul class="slides">';
 		
-		foreach ( $attachments as $attachment_id => $attachment ) { // create the list items for images with captions
+		foreach ( $attachments as $attachment ) { // create the list items for images with captions
 		
 			echo '<li>';
-			echo wp_get_attachment_image($attachment_id, 'full'); // get image size large
+			echo wp_get_attachment_image($attachment->ID, 'full'); // get image size large
 			echo '<span class="description">';
 			echo get_post_field('post_content', $attachment->ID); // get image description field
 			echo '</span>';
