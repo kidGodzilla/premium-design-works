@@ -20,7 +20,6 @@
 <a href="http://www.mikesinkula.com/" title="Link to: http://www.mikesinkula.com/" target="_blank"><img class="myface" src="<?php bloginfo('template_directory'); ?>/images/img-myface.jpg" />
 </a>
 <?php echo get_the_author_meta('description'); ?>
-<?php get_my_social_icons(); ?>
 </p>
 <!-- End Author Dedication -->
 
