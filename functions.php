@@ -1,4 +1,12 @@
-<?php // Premium Design Works 
+<?php
+
+/*  
+Theme Name: Premium Design Works
+Description: This is a theme your mom would be responsive to.
+Version: 3.0
+Author: Premium Design Works
+Author URI: http://www.premiumdw.com/
+*/
 
 // Link to admin styles
 add_editor_style( 'admin.css' );
