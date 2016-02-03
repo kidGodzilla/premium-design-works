@@ -43,9 +43,13 @@ body {
 	background: url(/*images/bg-grid-top.png*/) no-repeat top center, url(/*images/bg-grid-repeat.png*/) repeat-y top center;
 	}
 	
-img, embed, object, video, iframe {
+img, embed, object, video {
 	max-width: 100%;
 	height: auto;
+	}
+
+iframe {
+	max-width: 100%;
 	}
 
 a { 
