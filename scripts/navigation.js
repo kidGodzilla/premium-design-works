@@ -6,7 +6,6 @@ Author URI: http://www.premiumdw.com/
 */
 
 $(window).load(function() { // when the window loads...
-		
     
 	$('#toggle').click(function(e) { // when the hamburger is clicked...  
         
@@ -16,16 +15,12 @@ $(window).load(function() { // when the window loads...
         
 	});
     
-    $('li.menu-item-has-children > a').after('<span class="sub-toggle">&#711;</span>'); // create span tag to attach toggle icon to (asshole!)
+    $('li.menu-item-has-children > a').after('<span class="sub-toggle">&#711;</span>'); // create the sub-toggle arrow
     
-    $('span.sub-toggle').click(function(e) { // when the arrow is clicked...
+    $('span.sub-toggle').click(function() { // when the arrow is clicked...
         
         $(this).next('ul.sub-menu').slideToggle(); // ... toggle it's sub-menu
-        
-        // $(this).next("#nav-items li > ul.sub-menu").slideToggle(); // enable sub-menu toggle
-        
-        e.preventDefault(); // disable href on main-menu item
-        
+                
     });
 	
 	var loadWidth = window.innerWidth; // save window load width as a variable
