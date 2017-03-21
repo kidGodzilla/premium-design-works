@@ -1281,6 +1281,7 @@ th, td {
         top: 5px;
         right: 5px;
         z-index: 50;
+        cursor: pointer;
         }
 	
 	#menu-main-menu ul.sub-menu li {
