@@ -120,20 +120,24 @@ th, td {
 		text-align: right;
 		position: absolute;
 		right: 20px;
-		bottom: 4px;
+		bottom: 10px;
 		font-size: 2em;
         font-variant: small-caps;
+        line-height: 100%;
+        border-radius: 2px;
+        padding: 0 5px;
+        border: 1px solid #FFF;
+        
 	}
 	
 	#toggle a {
 		color: #FFF;
+        display: block;
+        padding: 0;
+        margin: -6px 0 -5px 0;
 	}
 
-    
-
-    
-	
-	
+ 
 /* NAVIGATION */
 #navigation {
 	max-width: 940px;
@@ -257,15 +261,7 @@ th, td {
 
     #menu-main-menu > li span {
         display: none;
-        
         }
-
-    /* #menu-main-menu > li a span:after { 
-        font-family: 'FeltTipRomanRegular', Helvetica, sans-serif;
-        color: #000;
-        font-size: 1.25em;
-        content: 'ˇ';
-        } */
 		
 /* MIDDLE */
 #middle {
@@ -1278,7 +1274,7 @@ th, td {
         font-size: 1.25em;
         position: absolute;
         padding: 5px;
-        top: 5px;
+        top: 10px;
         right: 5px;
         z-index: 50;
         cursor: pointer;

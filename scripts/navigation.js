@@ -15,7 +15,7 @@ $(window).load(function() { // when the window loads...
 
     });
 
-    $('li.menu-item-has-children > a').after('<span class="sub-toggle">&#711;</span>'); // create the sub-toggle arrow
+    $('#navigation li.menu-item-has-children > a').after('<span class="sub-toggle">&#711;</span>'); // create the sub-toggle arrow
 
     $('span.sub-toggle').click(function() { // when the arrow is clicked...
 
