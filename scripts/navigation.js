@@ -7,10 +7,26 @@ Author URI: http://www.premiumdw.com/
 
 $(window).load(function() { // when the window loads...
 		
-	$("#toggle").click(function() { 
-		$("#navigation").slideToggle(); // toggle main-menu
-		return false; // disable anchor tag target
+    
+	$('#toggle').click(function(e) { // when the hamburger is clicked...  
+        
+		$('#navigation').slideToggle(); // ... toggle main-menu
+        
+		e.preventDefault(); // disable href on main-menu item
+        
 	});
+    
+    $('li.menu-item-has-children > a').after('<span class="sub-toggle">&#711;</span>'); // create span tag to attach toggle icon to (asshole!)
+    
+    $('span.sub-toggle').click(function(e) { // when the arrow is clicked...
+        
+        $(this).next('ul.sub-menu').slideToggle(); // ... toggle it's sub-menu
+        
+        // $(this).next("#nav-items li > ul.sub-menu").slideToggle(); // enable sub-menu toggle
+        
+        e.preventDefault(); // disable href on main-menu item
+        
+    });
 	
 	var loadWidth = window.innerWidth; // save window load width as a variable
 	
@@ -20,11 +36,12 @@ $(window).load(function() { // when the window loads...
 			
 			if (window.innerWidth < 801) { // if width is less than 801px...
 			
-				$("#navigation").hide(); // hide main navigation items
+				$('#navigation').hide(); // hide main navigation items
+                $('ul.sub-menu').hide(); // hide sub navigation items
 				
 			} else  { // else ...
 			
-				$("#navigation").show(); // show main navigation items
+				$('#navigation').show(); // show main navigation items
 			}
 			
 		} // end trigger for width only
