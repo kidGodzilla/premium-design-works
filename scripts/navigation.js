@@ -36,7 +36,6 @@ $(window).load(function() { // when the window loads...
             } else  { // else ...
 
                 $('#navigation').show(); // show main navigation items
-                $('ul.sub-menu').hide(); // hide sub navigation items
             }
 
         } // end trigger for width only

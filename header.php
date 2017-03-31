@@ -38,7 +38,6 @@ Author URI: http://www.premiumdw.com/
 <!-- Start Links -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css">
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/icons/flaticon.css" type="text/css">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/flame.ico" />
 <link rel="publisher" href="https://plus.google.com/+PremiumDesignWorksSeattle/" />
@@ -62,25 +61,36 @@ Author URI: http://www.premiumdw.com/
 
 <!-- Start Header -->
 <div id="header">
+    
+    <!-- Begin Crop Marks -->
+    <img id="top-left" src="<?php bloginfo('template_directory'); ?>/images/top-left.svg" />
+    <img id="top-right" src="<?php bloginfo('template_directory'); ?>/images/top-right.svg" />
+    <!-- End Crop Marks -->
+    
+    <!-- Begin Red Header box -->
+    <div id="header-box">
 
-	<!-- Begin Logo -->
-    <h1 id="logo"><a href="<?php echo get_settings('home'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="Premium Design Works" /></a></h1>
-    <!-- End Logo -->
-    
-    <!-- Start Utility -->
-    <div id="utility">
-        <ul>
-        <li><a href="http://www.sccc.premiumdw.com" target="_blank">Students</a></li>
-        <li><a href="http://www.clients.premiumdw.com/" target="_blank">Clients</a></li>
-        </ul>
+        <!-- Begin Logo -->
+        <h1 id="logo"><a href="<?php echo get_settings('home'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="Premium Design Works" /></a></h1>
+        <!-- End Logo -->
+
+        <!-- Start Utility -->
+        <div id="utility">
+            <ul>
+            <li><a href="http://www.sccc.premiumdw.com" target="_blank">Students</a></li>
+            <li><a href="http://www.clients.premiumdw.com/" target="_blank">Clients</a></li>
+            </ul>
+        </div>
+        <!-- End Utility -->
+
+        <!-- Start Toggle -->
+        <div id="toggle">
+            <a href="#">&#8801;</a>
+        </div>
+        <!-- END Toggle -->
+        
     </div>
-    <!-- End Utility -->
-    
-    <!-- Start Toggle -->
-    <div id="toggle">
-    	<a href="#">&#8801;</a>
-    </div>
-    <!-- END Toggle -->
+    <!-- End Red Header box -->
     
 </div>
 <!-- End Header -->

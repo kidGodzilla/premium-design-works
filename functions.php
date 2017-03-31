@@ -145,7 +145,7 @@ function get_portfolio() {
 			$myTitle = apply_filters('the_title', $attachment->post_title); // title
 			$myCaption = get_post_field('post_excerpt', $attachment->ID); // caption
 			
-			$portfolio .= '<section class="portfolio-piece"><a href="'.$myPermalink.'">'.$myImage.'</a><h3><a href="'.$myPermalink.'">'.$myTitle.'&nbsp;&raquo;</a></h3><p>'.$myCaption.' <a href="'.$myPermalink.'">View&nbsp;&raquo;</a></p></section>';			      
+			$portfolio .= '<section class="portfolio-piece"><a href="'.$myPermalink.'">'.$myImage.'</a><h3><a href="'.$myPermalink.'">'.$myTitle.'&nbsp;&raquo;</a></h3><p>'.$myCaption.' <a href="'.$myPermalink.'" class="more">View&nbsp;&raquo;</a></p></section>';			      
 	
 		} // end foreach 
 
@@ -182,7 +182,7 @@ function get_featured_case_study($atts) {
 	$caseImage = get_the_post_thumbnail($myPostID, 'thumbnail'); // get featured thumbnail
 	$caseLink = get_permalink($myPosting->ID); // get permalink
 	
-	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">Case Study: '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.'&nbsp;<a href="'.$caseLink.'">Read More&nbsp;&raquo;</a></p></section>'; // write it up...
+	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">Case Study: '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.'&nbsp;<a href="'.$caseLink.'" class="more">Read The Case Study&nbsp;&raquo;</a></p></section>'; // write it up...
 	
 	return $myCaseStudy; // ... and return it, bitch.
 	
@@ -197,18 +197,19 @@ function get_child_pages() {
 	global $post;
 	
 	rewind_posts(); // stop any previous loops 
-	query_posts(array('post_type' => 'page', 'posts_per_page' => -1, 'post_status' => publish,'post_parent' => $post->ID,'order' => 'ASC','orderby' => 'menu_order')); // query and order child pages 
+	query_posts(array('post_type' => 'page', 'posts_per_page' => -1, 'post_status' => 'publish','post_parent' => $post->ID,'order' => 'ASC','orderby' => 'menu_order')); // query and order child pages 
     
 	while (have_posts()) : the_post(); 
 	
 		$childPermalink = get_permalink( $post->ID ); // post permalink
 		$childID = $post->ID; // post id
 		$childTitle = $post->post_title; // post title
+        $parentTitle = get_the_title($post->post_parent);
 		$childExcerpt = $post->post_excerpt; // post excerpt
         
 		echo '<article id="page-excerpt-'.$childID.'" class="page-excerpt">';
 		echo '<h3><a href="'.$childPermalink.'">'.$childTitle.' &raquo;</a></h3>';
-		echo '<p>'.$childExcerpt.' <a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
+		echo '<p>'.$childExcerpt.' <a href="'.$childPermalink.'" class="more">View Our '.$childTitle.' '.$parentTitle.'&nbsp;&raquo;</a></p>';
 		echo '</article>';
         
 	endwhile;

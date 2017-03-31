@@ -10,8 +10,8 @@
     <?php while (have_posts()) : the_post(); ?>
     <div class="page-excerpt" id="page-excerpt-<?php the_ID(); ?>">
     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?>&nbsp;&raquo;</a></h3>
-    <?php the_excerpt(); // page excerpts ?>
-    <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">View &raquo;</a></p>
+    <p><?php echo get_the_excerpt(); // page excerpts ?>
+    <a href="<?php the_permalink() ?>" class="more" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">View Result&nbsp;&raquo;</a></p>
     </div>
     <?php endwhile; ?>
     <ul class="post-navigation">
