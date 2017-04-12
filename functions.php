@@ -173,16 +173,19 @@ function get_seo() {
 // Get Featured Case Study 
 function get_featured_case_study($atts) {
 	
+    global $post;
+    
 	$myPostID = intval($atts['id']); // sets the id to pass
 	
 	$myPosting = get_post($myPostID); // gets the post of id passed
 	
 	$caseTitle = $myPosting->post_title; // get title
+    $caseCategory = get_the_category($myPosting->ID)[0]->name; // get category name
 	$caseExcerpt = $myPosting->post_excerpt; // get excerpt
 	$caseImage = get_the_post_thumbnail($myPostID, 'thumbnail'); // get featured thumbnail
 	$caseLink = get_permalink($myPosting->ID); // get permalink
 	
-	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">Case Study: '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.'&nbsp;<a href="'.$caseLink.'" class="more">Read The Case Study&nbsp;&raquo;</a></p></section>'; // write it up...
+	$myCaseStudy = '<section class="featured-case"><h3><a href="'.$caseLink.'">'.$caseCategory.': '.$caseTitle.' &raquo;</a></h3><a href="'.$caseLink.'">'.$caseImage.'</a><p>'.$caseExcerpt.'&nbsp;<a href="'.$caseLink.'" class="more">Full Story&nbsp;&raquo;</a></p></section>'; // write it up...
 	
 	return $myCaseStudy; // ... and return it, bitch.
 	
