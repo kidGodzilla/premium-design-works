@@ -49,7 +49,7 @@ body {
 	font-family: "Arial", sans-serif;
 	font-size: 100%;
 	line-height: 150%;
-	background: url(/*images/bg-grid-top.png*/) no-repeat top center, url(/*images/bg-grid-repeat.png*/) repeat-y top center;
+	background: url(/*images/bg-grid-top.png*/) no-repeat top center, url(/* images/bg-grid-repeat.png */) repeat-y top center;
     padding: 20px;
 	}
 	
@@ -574,6 +574,10 @@ th, td {
             column-count: 2;
             column-gap: 20px;
         }
+
+        #blog-box h3 {
+            font-size: 1.5em !important;
+        }
         
         #content.home article.page-excerpt {
             margin-bottom: 20px;
@@ -583,9 +587,10 @@ th, td {
 
         #content.home article.page-excerpt img.attachment-thumbnail, 
         #content.home article.page-excerpt img.size-thumbnail {
-            float: right;
-            margin-right: 0;
-            width: calc(50% - 20px);
+            float: left;
+            margin-right: 20px;
+            margin-left: 0px !important;
+            width: calc(33.33% - 20px);
         }
 		
 		#content article.blog-excerpt, #content article.page-excerpt, #content section.portfolio-piece  {

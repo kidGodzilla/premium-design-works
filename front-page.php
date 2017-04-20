@@ -33,8 +33,8 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article id="services-excerpt-<?php the_ID(); ?>" class="services-excerpt">
     <h3 id="post-<?php the_ID(); ?>" class="services-home"><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?><br>Services</a></h3>
-    <?php the_excerpt(); ?>
-    <p><a href="<?php the_permalink() ?>" class="more" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?> Services&nbsp;&raquo;</a></p>
+    <?php // the_excerpt(); ?>
+    <!-- <p><a href="<?php // the_permalink() ?>" class="more" rel="bookmark" title="Permanent Link to <?php // the_title(); ?>"><?php // the_title(); ?> Services&nbsp;&raquo;</a></p> -->
     </article>
     <?php endwhile; endif; ?>
     </div>
@@ -48,8 +48,8 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article id="portfolio-excerpt-<?php the_ID(); ?>" class="portfolio-excerpt">
     <h3 id="post-<?php the_ID(); ?>" class="services-home"><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?><br>Portfolio</a></h3>
-    <?php the_excerpt(); ?>
-    <p><a href="<?php the_permalink() ?>" class="more" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?> Portfolio&nbsp;&raquo;</a></p>
+    <?php // the_excerpt(); ?>
+    <!-- <p><a href="<?php // the_permalink() ?>" class="more" rel="bookmark" title="Permanent Link to <?php // the_title(); ?>"><?php // the_title(); ?> Portfolio&nbsp;&raquo;</a></p> -->
     </article>
     <?php endwhile; endif; ?>
     </div>
@@ -62,9 +62,9 @@
     <?php query_posts(array('posts_per_page' => 6 )); // show 6 latest podtings ?>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article id="case-excerpt-<?php the_ID(); ?>" class="page-excerpt">
-    <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
-    <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?></a>
-    <p><?php echo get_the_excerpt(); ?><a href="<?php the_permalink() ?>" class="more" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">&nbsp;Full Story&nbsp;&raquo;</a></p>
+    <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?></a><h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
+    
+    <!-- <p><?php echo get_the_excerpt(); ?><a href="<?php the_permalink() ?>" class="more" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">&nbsp;Full Story&nbsp;&raquo;</a></p> -->
     </article>
     <?php endwhile; endif; ?>
     </div>    

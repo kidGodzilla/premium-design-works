@@ -172,9 +172,7 @@ function get_seo() {
 
 // Get Featured Case Study 
 function get_featured_case_study($atts) {
-	
-    global $post;
-    
+	    
 	$myPostID = intval($atts['id']); // sets the id to pass
 	
 	$myPosting = get_post($myPostID); // gets the post of id passed
