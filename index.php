@@ -7,9 +7,9 @@
     <?php while (have_posts()) : the_post(); ?>
     <article class="blog-excerpt">
     <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?>&nbsp;&raquo;</a></h3>
-    <small>Posted on <?php the_time('F jS, Y') ?> in <?php the_category(', ') ?></small>
     <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?></a>
     <p><?php echo get_the_excerpt(); ?><a href="<?php the_permalink() ?>" class="more" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"> Full Story&nbsp;&raquo;</a></p>
+    <small>Posted on <?php the_time('F jS, Y') ?> in <?php the_category(', ') ?></small>
     </article>
     <?php endwhile; ?>
     <ul class="post-navigation">

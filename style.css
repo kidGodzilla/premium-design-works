@@ -49,7 +49,7 @@ body {
 	font-family: "Arial", sans-serif;
 	font-size: 100%;
 	line-height: 150%;
-	background: url(/*images/bg-grid-top.png*/) no-repeat top center, url(/* images/bg-grid-repeat.png */) repeat-y top center;
+	/* background: url(images/bg-grid-top.png) no-repeat top center, url(images/bg-grid-repeat.png) repeat-y top center; */
     padding: 20px;
 	}
 	
@@ -453,12 +453,6 @@ th, td {
 			float: left;
 			margin: 6px 20px 10px 0;
 		}
-
-        #content.home img.attachment-thumbnail, 
-		#content.home img.size-thumbnail {
-			float: right;
-			margin-left: 20px;
-		}
 		
 		#content img.attachment-medium, 
 		#content img.size-medium {
@@ -506,7 +500,7 @@ th, td {
         #content.home article.services-excerpt,
         #content.home article.portfolio-excerpt {
             float: left;
-            width: 220px;
+            width: calc(25% - 20px);
             margin-right: 20px;
             clear: none;
         }
@@ -571,26 +565,31 @@ th, td {
             }
         
         #blog-box {
-            column-count: 2;
-            column-gap: 20px;
+            margin-right: -20px;
         }
 
         #blog-box h3 {
             font-size: 1.5em !important;
         }
         
-        #content.home article.page-excerpt {
-            margin-bottom: 20px;
-            clear: none;
-            padding: 0 !important;
+        #content.home article.blog-excerpt {
+            float: left;
+            clear: none !important;
+            width: calc(50% - 20px);
+            margin-right: 20px;
+            /* margin-bottom: 20px; */
+    
         }
 
-        #content.home article.page-excerpt img.attachment-thumbnail, 
-        #content.home article.page-excerpt img.size-thumbnail {
+        #content.home article.blog-excerpt img.attachment-thumbnail, 
+        #content.home article.blog-excerpt img.size-thumbnail {
             float: left;
-            margin-right: 20px;
-            margin-left: 0px !important;
-            width: calc(33.33% - 20px);
+            width: calc(50% - 10px);
+        }
+
+        #content.home div.blog-excerpt-text {
+            float: left;
+            width: calc(50% - 10px);
         }
 		
 		#content article.blog-excerpt, #content article.page-excerpt, #content section.portfolio-piece  {
@@ -600,7 +599,7 @@ th, td {
 			}
 			
 		#content article.page-excerpt p, #content article.blog-excerpt p, #content.home div.random-post p {
-			display: inline;
+			/* display: inline; */
 		}
 		
 		#content article.page-excerpt small, #content article.blog-excerpt small, #content.home div.random-post small {
@@ -1394,13 +1393,30 @@ th, td {
 		}
 				
 	#content.page #spotlight-page, #content.home #spotlight-home {
-			width: 100%;
+        width: 100%;
 		}
+    
+    #content.home h3 {
+        font-size: 1.5em;
+        }
     
     #content.home article.services-excerpt, #content.home article.portfolio-excerpt {
         float: left;
         width: calc(25% - 20px);
         }
+        
+    #content.home article.blog-excerpt {
+        /* width: calc(50% - 20px); */
+    }
+
+    #content.home article.blog-excerpt img.attachment-thumbnail, 
+    #content.home article.blog-excerpt img.size-thumbnail {
+        /* width: calc(33.33% - 20px); */
+    }
+    
+    #content.home div.blog-excerpt-text {
+        /* width: calc(66.66% - 20px);*/
+    }
     
     #home-seo {
         float: left;
@@ -1612,6 +1628,24 @@ th, td {
         background-size: 75px 75px;
     }
     
+    #blog-box {
+        margin-right: 0px;
+    }
+    
+     #content.home article.blog-excerpt {
+        float: none;
+        width: 100%;
+        }
+
+    #content.home article.blog-excerpt img.attachment-thumbnail, 
+    #content.home article.blog-excerpt img.size-thumbnail {
+        width: calc(33.33% - 20px); 
+    }
+    
+    #content.home div.blog-excerpt-text {
+        width: calc(66.66% - 20px);
+    }
+    
     #seo-box {
         margin-right: 0px;
     }
@@ -1715,9 +1749,17 @@ th, td {
     }
     
     #blog-box {
-        column-count: 1;
+    column-count: 1;
+    }
+
+    #content.home article.blog-excerpt img.attachment-thumbnail, 
+    #content.home article.blog-excerpt img.size-thumbnail {
+        width: calc(33.33% - 20px); 
     }
 	
+    #content.home article.blog-excerpt h3 {
+        font-size: 1.25em !important;
+    }
 
 	#content img.attachment-medium, #content img.size-medium {
 		float: none;
