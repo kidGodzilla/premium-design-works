@@ -1396,10 +1396,6 @@ th, td {
         width: 100%;
 		}
     
-    #content.home h3 {
-        font-size: 1.5em;
-        }
-    
     #content.home article.services-excerpt, #content.home article.portfolio-excerpt {
         float: left;
         width: calc(25% - 20px);
@@ -1484,6 +1480,10 @@ th, td {
 	#spotlight-home span.description a {
 		font-size: .875em;
 		}
+    
+    #content.home h3 {
+        font-size: 1.5em;
+        }
 		
 }
 
