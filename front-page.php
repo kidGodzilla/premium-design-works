@@ -55,7 +55,7 @@
     <h2><a href="blog">Blog&nbsp;&raquo;</a></h2>
     <div id="blog-box">
     <?php rewind_posts(); // stop loop one ?>
-    <?php query_posts(array('posts_per_page' => 6 )); // show 6 latest podtings ?>
+    <?php query_posts(array('posts_per_page' => 4 )); // show 4 latest podtings ?>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article id="blog-excerpt-<?php the_ID(); ?>" class="blog-excerpt">
     <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?></a><div class="blog-excerpt-text"><h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?>&nbsp;&raquo;</a></h3>
