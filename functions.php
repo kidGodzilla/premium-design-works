@@ -38,6 +38,9 @@ add_action( 'init', 'register_my_menus' );
 add_theme_support( 'post-thumbnails' );
 //
 
+// Create Custom Image Sizes
+add_image_size( 'icon', 140, 140, true ); // 140 pixels wide by 140 pixels tall, hard crop mode
+
 // Create Page Excerpts
 add_post_type_support( 'page', 'excerpt' );
 //
@@ -202,13 +205,16 @@ function get_child_pages() {
     
 	while (have_posts()) : the_post(); 
 	
-		$childPermalink = get_permalink( $post->ID ); // post permalink
+		
 		$childID = $post->ID; // post id
-		$childTitle = $post->post_title; // post title
+		$childTitle = $post->post_title; // post titl
         $parentTitle = get_the_title($post->post_parent);
+        $childImage = get_the_post_thumbnail($post->ID, 'icon'); // get featured thumbnail
 		$childExcerpt = $post->post_excerpt; // post excerpt
+        $childPermalink = get_permalink( $post->ID ); // post permalink
         
 		echo '<article id="page-excerpt-'.$childID.'" class="page-excerpt">';
+        echo '<a href='.$childPermalink.'>'.$childImage.'</a>';
 		echo '<h3><a href="'.$childPermalink.'">'.$childTitle.' &raquo;</a></h3>';
 		echo '<p>'.$childExcerpt.' <a href="'.$childPermalink.'" class="more">View Our '.$childTitle.' '.$parentTitle.'&nbsp;&raquo;</a></p>';
 		echo '</article>';

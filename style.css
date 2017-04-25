@@ -602,6 +602,12 @@ th, td {
 			/* display: inline; */
 		}
 		
+        #content article.page-excerpt img {
+            float: left;
+            margin: 14px 20px 20px 0;
+        }
+
+
 		#content article.page-excerpt small, #content article.blog-excerpt small, #content.home div.random-post small {
 			display: block;
 			margin-bottom: 10px;
