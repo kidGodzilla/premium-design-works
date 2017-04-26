@@ -195,6 +195,28 @@ function get_featured_case_study($atts) {
 add_shortcode('casestudy', 'get_featured_case_study'); // create the shortcode for the function
 //
 
+// Get Featured Page 
+function get_featured_page($atts) {
+	    
+	$myPostID = intval($atts['id']); // sets the id to pass
+	
+	$myPosting = get_post($myPostID); // gets the post of id passed
+	
+	$pageTitle = $myPosting->post_title; // get title
+    $parentTitle = get_the_title($myPosting->post_parent);
+	$pageExcerpt = $myPosting->post_excerpt; // get excerpt
+	$pageImage = get_the_post_thumbnail($myPostID, 'icon'); // get featured thumbnail
+	$pageLink = get_permalink($myPosting->ID); // get permalink
+	
+	$myPage = '<article class="page-excerpt"><a href="'.$pageLink.'">'.$pageImage.'</a><h3><a href="'.$pageLink.'">'.$pageTitle.' &raquo;</a></h3><p>'.$pageExcerpt.'&nbsp;<a href="'.$pageLink.'" class="more">View '.$pageTitle.' '.$parentTitle.'&nbsp;&raquo;</a></p></article>'; // write it up...
+	
+	return $myPage; // ... and return it, bitch.
+	
+}
+
+add_shortcode('page', 'get_featured_page'); // create the shortcode for the function
+//
+
 // Get Child Pages 
 function get_child_pages() {
 	
