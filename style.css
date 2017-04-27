@@ -741,7 +741,7 @@ th, td {
 		}
 		
 	#content blockquote {
-		margin: 20px 0;
+		margin: 40px 0;
 		padding: 10px 0;
 		position: relative;
 		border-top: 3px solid #ddd;
@@ -1638,7 +1638,7 @@ th, td {
         margin-right: 0px;
     }
     
-     #content.home article.blog-excerpt {
+    #content.home article.blog-excerpt {
         float: none;
         width: 100%;
         }
@@ -1703,11 +1703,12 @@ th, td {
     } 
     
     #social-icons {
-    width: 100%; 
-    float: none;
-}
+        width: 100%; 
+        float: none;
+        }
 	
     #copyright {
+        width: 100%;
         color: #FFF;
         font-family: "Arial", sans-serif;
         font-size: .75em;
