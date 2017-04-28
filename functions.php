@@ -12,18 +12,12 @@ Author URI: http://www.premiumdw.com/
 add_editor_style('admin.css');
 //
 
-//  Register My Sidebar
+//  Register Sidebar
 register_sidebar(array('before_widget' => '<div id="%1$s" class="widget %2$s">', 'after_widget' => '</div>', 'before_title' => '<h2>', 'after_title' => '</h2>',));
 //
 
-// Register My Menus
-function register_my_menus() {
-	
-    register_nav_menus(array('main-menu' => __( 'Main Menu' ),'footer-menu' => __( 'Footer Menu' )));
-	
-}
-
-add_action('init', 'register_my_menus');
+// Register Menus
+register_nav_menus(array('main-menu' => __('Main Menu'), 'footer-menu' => __('Footer Menu')));	
 //
 
 // Create Post Thumbnails
