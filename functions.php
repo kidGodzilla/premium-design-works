@@ -70,43 +70,43 @@ function show_avatar($comment, $size) {
 // Get My Title Tag
 function get_my_title_tag() {
 	
-	global $post;
-	
-	if (is_front_page()) {  // for the site’s front page
-	
-		bloginfo('description'); // retrieve the site tagline
-	
-	} elseif (is_page()) { // for your site’s pages
-	
-		the_title(); // retrieve the page title 
-        
+    global $post;
+
+    if (is_front_page()) {  // for the site’s front page
+
+        bloginfo('description'); // retrieve the site tagline
+
+    } elseif (is_page()) { // for your site’s pages
+
+        the_title(); // retrieve the page title 
+
         if ($post->post_parent) { // if the page has a parent
-	
+
             echo ' | '; // separator with spaces
             echo get_the_title($post->post_parent);  // retrieve the parent page title
 
         }
-	
-	} elseif (is_category()) { // for your site's categories
-        
+
+    } elseif (is_category()) { // for your site's categories
+
         echo get_the_category()[0]->cat_name; // retrieve the category name
-        
+
     } elseif (is_single()) { // for your site’s postings
-	
-		the_title(); // retrieve the posting title 
+
+        the_title(); // retrieve the posting title 
         echo ' | '; // separator with spaces
         echo get_the_category()[0]->cat_name; // retrieve the category name
-        
-	} else { // for everything else
-		
-		bloginfo('description'); // retrieve the site tagline
-		
-	}
-	
-	echo ' | '; // separator with spaces
-	bloginfo('name'); // retrieve the site name
-	echo ' | '; // separator with spaces
-	echo 'Seattle, WA.'; // write in the location
+
+    } else { // for everything else
+
+        bloginfo('description'); // retrieve the site tagline
+
+    }
+
+    echo ' | '; // separator with spaces
+    bloginfo('name'); // retrieve the site name
+    echo ' | '; // separator with spaces
+    echo 'Seattle, WA.'; // write in the location
 	
 }
 //
