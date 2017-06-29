@@ -282,9 +282,12 @@ add_shortcode('caption', 'fixed_img_caption_shortcode');
 function fixed_img_caption_shortcode($attr, $content = null) {
 	
     if (!isset( $attr['caption'])) {
+        
         if (preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches )) {
+            
             $content = $matches[1];
             $attr['caption'] = trim($matches[2]);
+            
         }
     }
 
@@ -316,8 +319,7 @@ function show_avatar($comment, $size) {
 	
 	} else {
   
-	  $grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=
-		 ".md5($emaill)."&size=".$size."&rating=".$rating;
+	  $grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=".md5($emaill)."&size=".$size."&rating=".$rating;
 		 
 	  echo "<img src='$grav_url'/>";
 	  
